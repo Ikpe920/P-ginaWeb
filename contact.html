@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Metadades SEO -->
+    <meta name="description" content="Contacta amb JoJo's Blog. Envia suggeriments, preguntes o col·laboracions sobre JoJo's Bizarre Adventure.">
+    <meta name="keywords" content="contacte JoJo blog, suggeriments, col·laboració">
+    <meta name="author" content="JoJo's Blog">
+    
+    <!-- Schema.org - ContactPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contacte - JoJo's Blog",
+        "description": "Formulari de contacte per a JoJo's Blog",
+        "url": "https://jojoblog.cat/contact.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "JoJo's Blog",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Customer Service",
+                "email": "contacte@jojoblog.cat",
+                "availableLanguage": ["ca", "es", "en"]
+            }
+        }
+    }
+    </script>
+    
+    <title>Contacte | JoJo's Blog</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header amb navegació -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>JOJO'S BLOG</h1>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú de navegació">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">INICI</a></li>
+                    <li><a href="parts.html">PARTS</a></li>
+                    <li><a href="about.html">SOBRE EL BLOG</a></li>
+                    <li><a href="contact.html" class="active">CONTACTE</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Contingut principal -->
+    <main class="contact-page">
+        <div class="container">
+            <h2 class="page-title">CONTACTA AMB NOSALTRES</h2>
+            
+            <div class="contact-content">
+                
+                <!-- Formulari de contacte -->
+                <section class="contact-form-section">
+                    <h3 class="form-title">FORMULARI DE CONTACTE</h3>
+                    
+                    <form id="contactForm" class="contact-form" method="POST" action="process-form.php">
+                        
+                        <!-- Nom -->
+                        <div class="form-group">
+                            <label for="name">Nom *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="El teu nom" 
+                                required
+                                aria-required="true"
+                            >
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="el.teu@email.com" 
+                                required
+                                aria-required="true"
+                            >
+                        </div>
+                        
+                        <!-- Part favorita -->
+                        <div class="form-group">
+                            <label for="favorite-part">Part favorita de JoJo</label>
+                            <select id="favorite-part" name="favorite-part">
+                                <option value="">Selecciona una part...</option>
+                                <option value="part1">Part 1 - Phantom Blood</option>
+                                <option value="part2">Part 2 - Battle Tendency</option>
+                                <option value="part3">Part 3 - Stardust Crusaders</option>
+                                <option value="part4">Part 4 - Diamond is Unbreakable</option>
+                                <option value="part5">Part 5 - Golden Wind</option>
+                                <option value="part6">Part 6 - Stone Ocean</option>
+                                <option value="part7">Part 7 - Steel Ball Run</option>
+                                <option value="part8">Part 8 - JoJolion</option>
+                                <option value="part9">Part 9 - The JoJoLands</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Tipus de missatge -->
+                        <div class="form-group">
+                            <label>Tipus de missatge</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="message-type" value="suggestion" checked>
+                                    <span>Suggeriment d'article</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="message-type" value="question">
+                                    <span>Pregunta</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="message-type" value="collaboration">
+                                    <span>Col·laboració</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="message-type" value="other">
+                                    <span>Altres</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Missatge -->
+                        <div class="form-group">
+                            <label for="message">Missatge *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="6" 
+                                placeholder="Escriu el teu missatge aquí..." 
+                                required
+                                aria-required="true"
+                            ></textarea>
+                        </div>
+                        
+                        <!-- Newsletter -->
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" value="yes">
+                                <span>Vull rebre notícies i actualitzacions del blog</span>
+                            </label>
+                        </div>
+                        
+                        <!-- RGPD - Política de privadesa (OBLIGATORI) -->
+                        <div class="form-group privacy-box">
+                            <label class="checkbox-label privacy-label">
+                                <input 
+                                    type="checkbox" 
+                                    name="privacy" 
+                                    id="privacy" 
+                                    required
+                                    aria-required="true"
+                                >
+                                <span>
+                                    <strong>He llegit i accepto la <a href="privacy.html" target="_blank">política de privadesa</a></strong>. 
+                                    Les teves dades seran tractades segons el RGPD (Reglament General de Protecció de Dades) 
+                                    per contactar-te i respondre la teva consulta. Tens dret d'accés, rectificació, 
+                                    supressió i portabilitat de les teves dades.
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <!-- Botó d'enviar -->
+                        <button type="submit" class="btn-submit">
+                            ENVIAR MISSATGE
+                        </button>
+                        
+                    </form>
+                </section>
+                
+                <!-- Informació de contacte addicional -->
+                <section class="contact-info-section">
+                    <div class="contact-info-grid">
+                        
+                        <div class="contact-info-card">
+                            <div class="contact-icon">📧</div>
+                            <h3>EMAIL</h3>
+                            <p>contacte@jojoblog.cat</p>
+                            <p class="small-text">Resposta en 24-48h</p>
+                        </div>
+                        
+                        <div class="contact-info-card">
+                            <div class="contact-icon">📱</div>
+                            <h3>XARXES SOCIALS</h3>
+                            <p>@jojoblog_cat</p>
+                            <div class="social-links">
+                                <a href="#" aria-label="Twitter">Twitter</a> | 
+                                <a href="#" aria-label="Instagram">Instagram</a> | 
+                                <a href="#" aria-label="Discord">Discord</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                </section>
+                
+            </div>
+            
+            <!-- Nota sobre protecció de dades -->
+            <section class="data-protection-note">
+                <h3>🔒 Protecció de dades (RGPD)</h3>
+                <p>
+                    En compliment del Reglament (UE) 2016/679 del Parlament Europeu i del Consell, de 27 d'abril de 2016, 
+                    relatiu a la protecció de les persones físiques pel que fa al tractament de dades personals (RGPD), 
+                    t'informem que les dades que ens facilitis seran tractades per JoJo's Blog amb la finalitat 
+                    de gestionar la teva consulta i enviar-te informació relacionada amb el blog si ho has autoritzat.
+                </p>
+                <p>
+                    Pots exercir els teus drets d'accés, rectificació, supressió, limitació, portabilitat i oposició 
+                    enviant un correu a <a href="mailto:privacitat@jojoblog.cat">privacitat@jojoblog.cat</a>.
+                </p>
+                <p>
+                    <a href="privacy.html" class="link-privacy">Consulta la nostra Política de Privadesa completa</a>
+                </p>
+            </section>
+            
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p class="footer-title">© 2024 JoJo's Blog</p>
+            <p class="footer-subtitle">Fan site no oficial de JoJo's Bizarre Adventure</p>
+            <div class="footer-links">
+                <a href="privacy.html">Política de Privadesa</a>
+                <a href="legal.html">Avís Legal</a>
+                <a href="cookies.html">Política de Cookies</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Avís de Cookies (RGPD) -->
+    <div class="cookie-notice" id="cookieNotice">
+        <div class="cookie-content">
+            <p>🍪 Aquest lloc web utilitza cookies per millorar l'experiència d'usuari.</p>
+            <div class="cookie-buttons">
+                <a href="cookies.html" class="cookie-link">Més informació</a>
+                <button class="btn-accept" id="acceptCookies">Acceptar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
