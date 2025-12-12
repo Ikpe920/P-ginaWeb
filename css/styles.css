@@ -254,8 +254,9 @@ ul {
 .part-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Manté proporció */
 }
+
 
 .article-content,
 .part-content {
@@ -273,7 +274,7 @@ ul {
     font-size: 1.8rem;
     font-weight: 900;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #acacac;
 }
 
 .part-content h4 {
